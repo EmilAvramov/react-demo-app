@@ -19,6 +19,19 @@ header nav ul {
 	gap: 5rem;
 }
 
+header nav ul a {
+	text-decoration: none;
+	color: #1976d2;
+
+	&:visited {
+		color: #1976d2;
+	}
+
+	&:hover {
+		color: darkblue;
+	}
+}
+
 .root {
 	display: flex;
 	height: 85vh;
@@ -27,6 +40,48 @@ header nav ul {
 	padding: 0;
 	justify-content: center;
 	align-items: center;
+}
+
+.root main {
+	flex-basis: 80%;
+	height: 100%;
+}
+
+.root aside {
+	flex-basis: 20%;
+	height: 100%;
+}
+
+.books-page {
+	overflow: scroll;
+	height: 100%;
+}
+
+.books-search-bar {
+	padding: 0.5rem 2rem;
+	margin-bottom: 1rem;
+}
+
+.books-search-bar div {
+	width: 100%;
+}
+
+.book-list-container {
+	display: flex;
+	flex-direction: column;
+	padding: 0.5rem 2rem;
+	gap: 1rem;
+}
+
+.book-list-item {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 5rem;
+}
+
+.book-list-item p {
+	flex-basis: 20%;
 }
 
 footer {

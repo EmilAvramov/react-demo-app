@@ -11,7 +11,7 @@ export const SearchBar: React.FC<ISearchbarProps> = ({ setBooks }) => {
 	const [searchValue, setSearchValue] = useState('');
 
 	return (
-		<div>
+		<div className='books-search-bar'>
 			<Input
 				placeholder='Start typing...'
 				value={searchValue}

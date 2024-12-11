@@ -18,7 +18,7 @@ export const Books: React.FC = () => {
 	console.log(books)
 
 	return (
-		<div>
+		<div className='books-page'>
 			<SearchBar setBooks={setBooks} />
 			<BookList books={books}/>
 		</div>
