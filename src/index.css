@@ -96,7 +96,34 @@ header nav ul a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 1rem 0.5rem;
 	overflow: scroll;
+}
+
+.cart-li-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: scroll;
+	gap: 0.5rem;
+}
+
+.cart-li-item {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	gap: 0.5rem;
+	border: 0.5px solid #1976d2;
+	border-radius: 0.2rem;
+	padding: 0.5rem 1.5rem;
+}
+
+.cart-li-quantity {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
 }
 
 footer {
