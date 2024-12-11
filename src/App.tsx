@@ -1,9 +1,15 @@
+import { CartContextProvider } from './contexts/CartContext';
+import { ProfileContextProvider } from './contexts/ProfileContext';
 import { Router } from './Router';
 
 function App() {
 	return (
 		<>
-			<Router />
+			<ProfileContextProvider>
+				<CartContextProvider>
+					<Router />
+				</CartContextProvider>
+			</ProfileContextProvider>
 		</>
 	);
 }
