@@ -1,50 +1,15 @@
-# React + TypeScript + Vite
+## Description
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### The app consists of 2 pages, a few components and some helper partials. Two contexts maintain the app's state - one for the cart and one for the profile. Some external libraries were used for messages, form handling, date fields, etc.
 
-Currently, two official plugins are available:
+## Technical Choices
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Opted to use some external libraries (such as toast messages, yup for validation, react hook form, MUI) instead of writing from scratch since I'm familiar with them and to save time.
 
-## Expanding the ESLint configuration
+### Decided to use contexts since Redux would be overkill for such a small app. Could have merged both contexts into one, but decided to keep them separate for better readability.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Unimplemented Features
 
-- Configure the top-level `parserOptions` property like this:
+### I think I implemented all the mandatory features, although the visual presentation, some error handling and the functionality of adjusting items from the cart leaves room for improvement. There's a bug with adding/removing items from the cart, which I couldn't get to. I couldn't get to the responsive design, a11y and test part.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### With more time, I would likely implement SCSS to cut down on the redundant style snippets, add better UX when taking actions (e.g. adding/removing from cart could provide feedback) and possible do more with the profile information. Some of the code can be written better to provide better reusability and to be more extensible.
