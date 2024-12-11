@@ -20,7 +20,7 @@ export const CartList: React.FC<ICartList> = ({ lineItems }) => {
 						key={index}
 					>
 						<p>Book Title: {li.name}</p>
-						<p>Total price: {li.price * li.quantity}</p>
+						<p>Total price: {(li.price * li.quantity).toFixed(2)} USD</p>
 						<div className='cart-li-quantity'>
 							<RemoveIcon
 								onClick={() => {

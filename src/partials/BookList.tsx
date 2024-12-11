@@ -12,12 +12,20 @@ export const BookList: React.FC<IBookListProps> = ({ books }) => {
 
 	return (
 		<div className='book-list-container'>
+			<div className='book-list-header'>
+				<p>Title</p>
+				<p>Author</p>
+				<p>Price</p>
+			</div>
 			{books?.map((book, index) => {
 				return (
-					<div className='book-list-item' key={index}>
+					<div
+						className='book-list-item'
+						key={index}
+					>
 						<p>{book.title}</p>
 						<p>{book.author}</p>
-						<p>{book.price}</p>
+						<p>{book.price} USD</p>
 						<Button
 							variant='outlined'
 							onClick={() => {

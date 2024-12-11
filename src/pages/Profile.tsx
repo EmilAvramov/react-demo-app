@@ -7,6 +7,7 @@ import { ProfileContext } from '../contexts/ProfileContext';
 import { Button, Input } from '@mui/material';
 import { DateTimePicker } from '@mui/x-date-pickers';
 import dayjs from 'dayjs';
+import Toastify from 'toastify-js';
 
 export const Profile: React.FC = () => {
 	const profileContext = useContext(ProfileContext);
@@ -34,6 +35,17 @@ export const Profile: React.FC = () => {
 			profileContext?.setProfile(data);
 		}
 		setEditMode((prev) => !prev);
+
+		Toastify({
+			text: 'Form submitted successfully',
+			duration: 2000,
+			gravity: 'top',
+			stopOnFocus: true,
+			style: {
+				background: 'linear-gradient(to right, #00b09b, #96c93d)',
+				textAlign: 'center',
+			},
+		}).showToast();
 	};
 
 	return (

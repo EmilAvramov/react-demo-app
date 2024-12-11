@@ -74,15 +74,21 @@ header nav ul a {
 	gap: 1rem;
 }
 
-.book-list-item {
+.book-list-item,
+.book-list-header {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	gap: 5rem;
 }
 
-.book-list-item p {
+.book-list-item p,
+.book-list-header p {
 	flex-basis: 20%;
+}
+
+.book-list-header p {
+	font-weight: bold;
 }
 
 .cart-submit-container {

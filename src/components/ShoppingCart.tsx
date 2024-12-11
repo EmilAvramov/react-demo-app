@@ -2,11 +2,10 @@ import { useContext } from 'react';
 import { CartContext } from '../contexts/CartContext';
 import { CartList } from '../partials/CartList';
 import { Button } from '@mui/material';
+import Toastify from 'toastify-js';
 
 export const ShoppingCart: React.FC = () => {
 	const cartContext = useContext(CartContext);
-
-	console.log(cartContext?.lineItems);
 
 	return (
 		<div className='cart-container'>
@@ -21,9 +20,27 @@ export const ShoppingCart: React.FC = () => {
 				)}
 			</div>
 
-			<div className='cart-submit-container'>
-				<Button variant='outlined'>Submit Order</Button>
-			</div>
+			{cartContext?.lineItems && cartContext?.lineItems.length > 0 && (
+				<div className='cart-submit-container'>
+					<Button
+						variant='outlined'
+						onClick={() => {
+							Toastify({
+								text: 'Order Submitted',
+								duration: 2000,
+								gravity: 'top',
+								stopOnFocus: true,
+								style: {
+									background: 'linear-gradient(to right, #00b09b, #96c93d)',
+									textAlign: 'center',
+								},
+							}).showToast();
+						}}
+					>
+						Submit Order
+					</Button>
+				</div>
+			)}
 		</div>
 	);
 };
