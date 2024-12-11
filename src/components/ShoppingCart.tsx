@@ -33,6 +33,10 @@ export const ShoppingCart: React.FC = () => {
 								style: {
 									background: 'linear-gradient(to right, #00b09b, #96c93d)',
 									textAlign: 'center',
+									color: 'white',
+									position: 'absolute',
+									right: '0',
+									padding: '1rem 2rem',
 								},
 							}).showToast();
 						}}

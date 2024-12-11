@@ -6,21 +6,19 @@ import { BookList } from '../partials/BookList';
 
 export const Books: React.FC = () => {
 	const [books, setBooks] = useState<IBook[]>();
-	const [firstRender, setFirstRender] = useState(true)
+	const [firstRender, setFirstRender] = useState(true);
 
 	useEffect(() => {
 		if (firstRender) {
 			setBooks(mockData);
-			setFirstRender(false)
+			setFirstRender(false);
 		}
 	}, [books, firstRender]);
-
-	console.log(books)
 
 	return (
 		<div className='books-page'>
 			<SearchBar setBooks={setBooks} />
-			<BookList books={books}/>
+			<BookList books={books} />
 		</div>
 	);
 };

@@ -1,6 +1,7 @@
 import type { IBookLineItem } from '@book-app-types';
 import { createContext, useState } from 'react';
 import { mockData } from '../database';
+import Toastify from 'toastify-js';
 
 interface ICartContext {
 	lineItems?: IBookLineItem[];
@@ -21,7 +22,23 @@ export const CartContextProvider = ({ children }: { children: React.ReactNode })
 		if (!dbItem) return;
 
 		// message, stock depleted
-		if (dbItem.stock === 0) return;
+		if (dbItem.stock === 0) {
+			Toastify({
+				text: 'Insufficient stock quantity',
+				duration: 1500,
+				gravity: 'top',
+				stopOnFocus: true,
+				style: {
+					background: 'linear-gradient(98.3deg, rgb(0, 0, 0) 10.6%, rgb(255, 0, 0) 97.7%)',
+					textAlign: 'center',
+					color: 'white',
+					position: 'absolute',
+					right: '0',
+					padding: '1rem 2rem',
+				},
+			}).showToast();
+			return;
+		}
 
 		setLineItems((lineItems) => {
 			if (!lineItems?.length) return [item];
