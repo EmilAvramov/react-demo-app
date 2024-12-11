@@ -84,6 +84,21 @@ header nav ul a {
 	flex-basis: 20%;
 }
 
+.cart-submit-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cart-content {
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: scroll;
+}
+
 footer {
 	height: 5vh;
 	width: 100%;

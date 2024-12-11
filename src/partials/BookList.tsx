@@ -12,9 +12,9 @@ export const BookList: React.FC<IBookListProps> = ({ books }) => {
 
 	return (
 		<div className='book-list-container'>
-			{books?.map((book) => {
+			{books?.map((book, index) => {
 				return (
-					<div className='book-list-item'>
+					<div className='book-list-item' key={index}>
 						<p>{book.title}</p>
 						<p>{book.author}</p>
 						<p>{book.price}</p>
