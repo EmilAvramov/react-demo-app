@@ -1,4 +1,6 @@
-export const mockData = [
+import type { IBook } from "@book-app-types";
+
+export const mockData: IBook[] = [
 	{
 		id: 1,
 		title: 'React for Beginners',
