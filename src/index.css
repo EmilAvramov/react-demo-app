@@ -148,6 +148,19 @@ header nav ul a {
 	padding-left: 20rem;
 }
 
+.form-error {
+	color: red;
+	padding: 0;
+}
+
+.form-edit-button {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 20rem;
+}
+
 footer {
 	height: 5vh;
 	width: 100%;
